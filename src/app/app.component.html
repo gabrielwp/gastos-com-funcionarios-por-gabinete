@@ -1,0 +1,23 @@
+<mat-form-field>
+  <mat-label>Gabinete</mat-label>
+  <mat-select #teste [value]="gabinetesNovo[0]" (selectionChange)="onSelectGabinete($event.value)">
+    <mat-option *ngFor="let selecao of gabinetesNovo" [value]="selecao">
+      {{selecao}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<mat-form-field>
+  <mat-label>Ano</mat-label>
+  <mat-select [value]="anosArray[0]" (selectionChange)="callChart(teste.value, $event.value)">
+    <mat-option *ngFor="let selecao of anosArray" [value]="selecao">
+      {{selecao}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<canvas id="grafico"></canvas>
